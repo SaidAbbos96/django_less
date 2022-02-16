@@ -9,6 +9,8 @@
                 {{ post.body }}
             </p>
             <h5 class="post__author">{{ post.author }}</h5>
+            <a href="{% url 'edit_post' post.id %}">Tahrirlash</a>
+            <a href="{% url 'delete_post' post.id %}">Delete</a>
         </div>
     </div>
 {% endblock content %}

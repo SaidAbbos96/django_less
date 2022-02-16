@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <h2 class="post__title">
+                Yangi post
+            </h2>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Yaratish">
+            </form>
+        </div>
+    </div>
+{% endblock content %}
