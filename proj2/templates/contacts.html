@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <form action="">
+            <h2 class="form__title">Aloqa formasi</h2>
+            <div class="form__box">
+                <label for="username">Ism:</label>
+                <input type="text" name="username" id="username" placeholder="Enter you name...">
+            </div>
+            <div class="form__box">
+                <label for="userphone">Phone:</label>
+                <input type="tel" name="phone" id="userphone" value="+998 ">
+            </div>
+            <div class="form__box">
+                <input type="submit" value="Yuborish">
+            </div>
+        </form>
+    </div>
+{% endblock content %}
