@@ -26,7 +26,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url "home" %}">Bosh sahifa</a>
+                            <a class="nav-link active" aria-current="page" href="{% url "blog" %}">Blog sahifasi</a>
                         </li>
                         {#                    <li class="nav-item">#}
                         {#                        <a class="nav-link" href="#">Link</a>#}
@@ -40,7 +40,7 @@
                                     {{ user.username | title }}
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Yangi post yaratish</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'article_create' %}">Yangi post yaratish</a></li>
                                     <li><a class="dropdown-item" href="{% url 'password_change' %}">Parolni
                                         alishgtirish</a></li>
                                     <li>
@@ -59,7 +59,7 @@
         </nav>
     </div>
 </header>
-<main style="min-height: 90vh;" class="container py-2">
+<main style="min-height: 90vh; margin: 30px auto;" class="container py-2">
     {% block content %}
     {% endblock content %}
 </main>

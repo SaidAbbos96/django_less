@@ -19,4 +19,4 @@ class Article(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('singel_post', args=[str(self.id)])
+        return reverse('article', args=[str(self.id)])

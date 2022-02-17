@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     # custom apss
     'accounts',
-    'pages',
     'articles',
 ]
 

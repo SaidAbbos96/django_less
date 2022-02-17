@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% block title %} Maqolani tahrirlash {% endblock title %}
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <h2 class="reset__title">
+                Yangi maqola
+            </h2>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" class="btn btn-primary" value="Saqlash">
+            </form>
+        </div>
+    </div>
+{% endblock content %}
