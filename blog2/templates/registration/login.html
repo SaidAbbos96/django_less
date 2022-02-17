@@ -13,6 +13,7 @@
 {#                {{ form.as_p }}#}
                 {{ form|crispy }}
                 <input type="submit" class="btn btn-success" value="Kirish">
+                <a href="{% url 'password_reset' %}" class="btn btn-info">Parolni tiklash</a>
             </form>
         </div>
     </div>
