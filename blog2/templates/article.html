@@ -5,16 +5,18 @@
         <div class="col-8">
             <div class="card">
                 {% if object.photo %}
-                    <img src="{{ object.photo.url }}" class="card-img-top" alt="{{ object.title }}">
+                    <img src="{{ article.photo.url }}" class="card-img-top" alt="{{ article.title }}">
                 {% endif %}
-                <h5>{{ object.author }} || {{ object.date }}</h5>
+                <h5>{{ article.author }} || {{ article.date }}</h5>
                 <div class="card-body">
-                    <h5 class="card-title">{{ object.title }}</h5>
-                    <p class="card-text">{{ object.body }}</p>
+                    <h5 class="card-title">{{ article.title }}</h5>
+                    <p class="card-text">{{ article.body | safe }}</p>
                 </div>
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <a href="{% url 'article_edit' article.pk %}" class="btn btn-danger ms-2">Tahrirlash</a>
-                    <a href="{% url 'article_delete' article.pk %}" class="btn btn-warning ms-2">O'chirish</a>
+                    {% if user.is_authenticated and article.author == user %}
+                        <a href="{% url 'article_edit' article.pk %}" class="btn btn-warning ms-2">Tahrirlash</a>
+                        <a href="{% url 'article_delete' article.pk %}" class="btn btn-danger ms-2">O'chirish</a>
+                    {% endif %}
                     <a href="{% url 'blog' %}" class="btn btn-info ms-2">Barcha maqolalar</a>
                 </div>
 

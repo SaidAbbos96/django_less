@@ -37,9 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # crispy form
     'crispy_forms',
+    'ckeditor',
+    'ckeditor_uploader',
     # custom apss
     'accounts',
     'articles',
+
 ]
 
 MIDDLEWARE = [
@@ -117,9 +120,18 @@ USE_TZ = True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
-
+# ckeditor config
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    },
+}
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_RESTRICT_BY_USER = True
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

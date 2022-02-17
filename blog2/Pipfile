@@ -8,6 +8,7 @@ django = "*"
 django-crispy-forms = "*"
 blank = "*"
 pillow = "*"
+django-ckeditor = "*"
 
 [dev-packages]
 
