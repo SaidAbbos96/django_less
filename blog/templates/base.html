@@ -23,7 +23,8 @@
                 <h4>Salom {{ user.username }} !</h4>
                 <h3><a href="{% url 'logout' %}">Chiqish</a></h3>
             {% else %}
-                <a href="/account/login/">Login</a>
+                <a href="{% url 'login' %}">Login</a><br>
+                <a href="{% url 'signup' %}">Ro'yxatdan o'tish</a>
             {% endif %}
         </li>
         </li>
